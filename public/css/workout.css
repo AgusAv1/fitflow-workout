@@ -1,0 +1,63 @@
+/* Styling untuk halaman Workout */
+
+body {
+    background: #f8fafc;
+    color: #2d3748;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h3 {
+    color: #276749; /* Hijau gelap */
+}
+
+.accordion-button {
+    background-color: #dafacc;
+    color: #276749;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #70a604;
+    color: white;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(218, 250, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 15px 35px rgba(218, 250, 204, 0.5);
+}
+
+.btn-success {
+    background-color: #70a604;
+    border-color: #70a604;
+}
+
+.btn-success:hover {
+    background-color: #82c341;
+    border-color: #82c341;
+}
+
+.btn-primary {
+    background-color: #276749;
+    border-color: #276749;
+}
+
+.btn-primary:hover {
+    background-color: #1c4532;
+    border-color: #1c4532;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 12px;
+}
+
+/* List Workout Hari Ini */
+#todayWorkoutList {
+    max-height: 400px;
+    overflow-y: auto;
+}
