@@ -3,7 +3,7 @@
 @section('title', 'Resep Sehat')
 
 {{-- Link ke file CSS terpisah --}}
-<link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
+@vite('resources/css/recipes.css')
 
 @section('content')
 <div class="container">
@@ -218,11 +218,11 @@ document.addEventListener('DOMContentLoaded', function() {
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const category = this.getAttribute('data-category');
-            
+
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter cards
             recipeCards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
@@ -238,11 +238,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Search functionality
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
-        
+
         recipeCards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
             const description = card.querySelector('.recipe-description').textContent.toLowerCase();
-            
+
             if (title.includes(searchTerm) || description.includes(searchTerm)) {
                 card.style.display = 'block';
             } else {

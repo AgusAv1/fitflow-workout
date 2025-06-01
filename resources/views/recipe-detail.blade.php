@@ -2,7 +2,7 @@
 
 @section('title', 'Detail Resep')
 
-<link rel="stylesheet" href="{{ asset('css/recipe-detail.css') }}">
+@vite('resources/css/recipes-detail.css')
 
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
             </a>
             <button class="btn-favorite-large" id="favoriteBtn">♡</button>
         </div>
-        
+
         <div class="recipe-hero">
             <div class="recipe-image-large">
                 <img src="{{ $recipe['image'] }}" alt="{{ $recipe['title'] }}" id="recipeImage">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="steps-container" id="stepsContainer">
             @if(isset($instructions))
                 @foreach($instructions as $index => $step)
@@ -128,7 +128,7 @@
                         <p>Lelehkan butter dalam panci kecil. Di mangkuk terpisah, kocok kuning telur dengan air lemon hingga mengental.</p>
                     </div>
                 </div>
-                
+
                 <div class="step-item" data-step="2">
                     <div class="step-checkbox">
                         <input type="checkbox" id="step2" class="step-check">
@@ -155,17 +155,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressCircle = document.getElementById('progressCircle');
     const progressPercentage = document.getElementById('progressPercentage');
     const totalSteps = checkboxes.length;
-    
+
     // Update total steps in progress text
     document.getElementById('totalSteps').textContent = totalSteps;
 
     function updateProgress() {
         const completedSteps = document.querySelectorAll('.step-check:checked').length;
         const percentage = Math.round((completedSteps / totalSteps) * 100);
-        
+
         progressText.innerHTML = `${completedSteps} dari ${totalSteps} langkah selesai`;
         progressPercentage.textContent = `${percentage}%`;
-        
+
         // Update circular progress
         const degrees = (percentage / 100) * 360;
         progressCircle.style.background = `conic-gradient(#70A604 ${degrees}deg, #e2e8f0 ${degrees}deg)`;

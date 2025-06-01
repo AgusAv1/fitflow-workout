@@ -6,7 +6,7 @@
     <title>FitFlow Timer</title>
 
     {{-- CSS Styles --}}
-    <link rel="stylesheet" href="{{ asset('css/timer.css') }}">
+   @vite('resources/css/timer.css')
 
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,8 +85,7 @@
     </audio>
 
 
-    {{-- JavaScript --}}
-    <script src="{{ asset('js/timer.js') }}"></script>
+    @vite('resources/js/timer.js')
 
     {{-- Additional Scripts if needed --}}
     @stack('scripts')

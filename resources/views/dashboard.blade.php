@@ -2,8 +2,7 @@
 
 @section('title', 'Dashboard')
 
-{{-- Link ke file CSS terpisah --}}
-<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+@vite('resources/css/dashboard.css')
 
 @section('content')
 <div class="container">
